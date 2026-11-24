@@ -1,0 +1,48 @@
+# Скиллы DSH Starter
+#
+# Скилл это папка с файлом SKILL.md внутри. Каталог: ~/.agents/skills
+# Формат строки: скилл | группа | откуда взять
+
+# --- Рабочий цикл разработки: 15 штук, ставятся из одного репозитория ---
+# git clone https://github.com/obra/superpowers
+# папки из <клон>/skills/ копируются в ~/.agents/skills целиком
+
+using-superpowers | цикл | superpowers
+brainstorming | цикл | superpowers
+writing-plans | цикл | superpowers
+executing-plans | цикл | superpowers
+test-driven-development | цикл | superpowers
+systematic-debugging | цикл | superpowers
+verification-before-completion | цикл | superpowers
+requesting-code-review | цикл | superpowers
+receiving-code-review | цикл | superpowers
+dispatching-parallel-agents | цикл | superpowers
+subagent-driven-development | цикл | superpowers
+using-git-worktrees | цикл | superpowers
+finishing-a-development-branch | цикл | superpowers
+writing-skills | цикл | superpowers
+diagnosing-superpowers | цикл | superpowers
+
+# --- Знание самого DSH: 4 штуки ---
+dsh-doc | dsh | уже в комплекте с приложением, ставить не надо
+official-plugins | dsh | каталог скиллов DSH, поиск по имени
+personalized-pages | dsh | каталог скиллов DSH, поиск по имени
+find-skills | dsh | каталог скиллов DSH: им же искать остальные скиллы
+
+# --- Дизайн и фронтенд: 4 штуки ---
+design-ecosystem | дизайн | каталог скиллов DSH, поиск по имени
+design-taste-frontend | дизайн | каталог скиллов DSH, поиск по имени
+impeccable | дизайн | каталог скиллов DSH, поиск по имени
+modern-web-guidance | дизайн | каталог скиллов DSH, поиск по имени
+
+# --- Тексты: 3 штуки ---
+humanizer | текст | каталог скиллов DSH, поиск по имени
+ru-text | текст | каталог скиллов DSH, поиск по имени
+caveman | текст | каталог скиллов DSH, поиск по имени
+
+# --- По желанию, когда пригодится ---
+# genui                  карточки и таблицы в чате, ставится вместе с плагином dsh-genui
+# break-ui               проверка интерфейса плохими данными
+# security-audit         разбор кода на дыры
+# diagram-design         схемы и графики
+# writing-skills         уже в списке выше, для своих скиллов

@@ -1,0 +1,43 @@
+# Отдельные настройки для ~/.dsh/profiles/desktop/cordis.patch.yml
+#
+# Это верхний уровень списка: каждая запись начинается с "- id:".
+# Если такая запись уже есть в файле — не добавляй вторую, а поправь config у неё.
+# Раскладка: два пробела на уровень, табы нельзя.
+#
+# Пресет со сжатием и инструментами лежит рядом: config/preset-cordis.yml
+
+# Модель по умолчанию. Идентификатор из каталога, не название из интерфейса.
+- id: agent-default-model
+  name: "@deepseek-ai/dsh-agent-default-model"
+  config:
+    provider: deepseek-account
+    model: deepseek-flash
+    reasoningEffort: high
+
+# Что ассистент может без спроса.
+# read-only — только читает; workspace-write — пишет в рабочую папку;
+# danger-full-access — пишет везде. Выбирай по машине, а не по удобству.
+- id: permission
+  config:
+    defaultPreset: danger-full-access
+
+# Повторы запроса к DeepSeek: 5 попыток, пауза растёт 5 → 10 → 20 → 40 → 60 с.
+# Пустые ответы, лимиты, сервер, таймаут, обрыв соединения — всё это лечится повтором.
+- id: llm-deepseek-account
+  name: "@deepseek-ai/dsh-llm-deepseek-account"
+  config:
+    retryPolicy:
+      mode: normal
+      maxRetries: 5
+      retryableCodes:
+        - EMPTY_RESPONSE
+        - RATE_LIMIT
+        - SERVER
+        - TIMEOUT
+        - TRANSPORT
+        - STREAM_CLOSED
+        - MALFORMED_RESPONSE
+      backoff:
+        initialDelayMs: 5000
+        maxDelayMs: 60000
+        jitterRatio: 0.2
